@@ -728,7 +728,26 @@
           font-size: 40px;
         }
       }
-    </style>
+    
+@media (max-width:768px){
+nav{flex-direction:column;padding:10px}
+nav ul{display:flex!important;flex-wrap:wrap;justify-content:center;gap:12px}
+header{height:auto;min-height:100vh;padding:110px 0 40px}
+.hero{position:relative;top:auto;left:auto;transform:none;width:95%;padding-top:20px}
+.hero img{width:90px}
+.hero h1{font-size:34px}
+.hero h2{font-size:20px}
+.hero p{font-size:16px}
+.hero-buttons{flex-direction:column}
+.hero-buttons a{width:100%;justify-content:center}
+.stats{position:relative;left:auto;bottom:auto;transform:none;width:95%;margin:30px auto;grid-template-columns:1fr 1fr}
+.container,.booking{display:flex;flex-direction:column}
+.gallery-grid,.reviews-grid{grid-template-columns:1fr}
+.gallery-card img,.booking-right img,.about-image img{height:auto}
+.section-title h2,.about-text h2,.gallery-section h2,.reviews-section h2,.booking h2{font-size:30px}
+}
+
+</style>
   </head>
   <body>
     <nav>
