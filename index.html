@@ -785,17 +785,30 @@ header{height:auto;min-height:100vh;padding:110px 0 40px}
         <p>
           نقدم خدمات تنظيف احترافية باستخدام أحدث المعدات مع فريق متخصص وأسعار تنافسية وجودة مضمونة 100%.
         </p>
-        <div class="hero-buttons">
-          <a href="tel:01278213966" class="call-btn">
-            <i class="fas fa-phone"></i>
-            اتصل الآن
-          </a>
-          <a href="https://wa.me/201278213966" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
-            واتساب
-          </a>
-        </div>
-      </div>
+       <div class="hero-buttons">
+    
+    <!-- زر الاتصال -->
+    <a href="tel:01278213966"
+       class="call-btn"
+       onclick="gtag('event','conversion',{
+           'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'
+       });">
+        <i class="fas fa-phone"></i>
+        اتصل الآن
+    </a>
+
+    <!-- زر واتساب -->
+    <a href="https://wa.me/201278213966"
+       target="_blank"
+       class="whatsapp-btn"
+       onclick="gtag('event','conversion',{
+           'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'
+       });">
+        <i class="fab fa-whatsapp"></i>
+        واتساب
+    </a>
+
+</div>      </div>
 
       <div class="stats">
         <div class="stat">
@@ -1021,42 +1034,77 @@ header{height:auto;min-height:100vh;padding:110px 0 40px}
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <img src="https://i.ibb.co/r2HtxJFM/ef3684cb-9158-48bb-900a-f7a03992c1d3.png" alt="شعار سفيان كلين" />
-        <h2>شركة سفيان كلين</h2>
-        <p>تنظيف المنازل • الشركات • الفلل • القصور • جلي الرخام • التنظيف بعد التشطيب</p>
-        <div class="footer-contact">
-          <a href="tel:01278213966">
-            <i class="fas fa-phone"></i>
-            01278213966
-          </a>
-          <a href="https://wa.me/201278213966">
-            <i class="fab fa-whatsapp"></i>
-            واتساب
-          </a>
-        </div>
-        <div class="social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-tiktok"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="copyright">© 2026 جميع الحقوق محفوظة | شركة سفيان كلين</p>
-      </div>
-    </footer>
+  <footer class="footer">
+  <div class="footer-content">
+    <img src="https://i.ibb.co/r2HtxJFM/ef3684cb-9158-48bb-900a-f7a03992c1d3.png" alt="شعار سفيان كلين" />
 
-    <button id="topBtn" aria-label="العودة للأعلى">
-      <i class="fas fa-angle-up"></i>
-    </button>
+    <h2>شركة سفيان كلين</h2>
 
-    <a href="tel:01278213966" class="floating-call" title="اتصل بنا">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="https://wa.me/201278213966" target="_blank" class="floating-whatsapp" title="واتساب">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+    <p>
+      تنظيف المنازل • الشركات • الفلل • القصور • جلي الرخام • التنظيف بعد التشطيب
+    </p>
 
+    <div class="footer-contact">
+
+      <!-- الاتصال -->
+      <a href="tel:01278213966"
+         onclick="gtag('event','conversion',{
+           'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'
+         });">
+        <i class="fas fa-phone"></i>
+        01278213966
+      </a>
+
+      <!-- واتساب -->
+      <a href="https://wa.me/201278213966"
+         target="_blank"
+         onclick="gtag('event','conversion',{
+           'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'
+         });">
+        <i class="fab fa-whatsapp"></i>
+        واتساب
+      </a>
+
+    </div>
+
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <p class="copyright">
+      © 2026 جميع الحقوق محفوظة | شركة سفيان كلين
+    </p>
+
+  </div>
+</footer>
+
+<button id="topBtn" aria-label="العودة للأعلى">
+  <i class="fas fa-angle-up"></i>
+</button>
+
+<!-- زر الاتصال العائم -->
+<a href="tel:01278213966"
+   class="floating-call"
+   title="اتصل بنا"
+   onclick="gtag('event','conversion',{
+     'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'
+   });">
+  <i class="fas fa-phone-alt"></i>
+</a>
+
+<!-- زر واتساب العائم -->
+<a href="https://wa.me/201278213966"
+   target="_blank"
+   class="floating-whatsapp"
+   title="واتساب"
+   onclick="gtag('event','conversion',{
+     'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'
+   });">
+  <i class="fab fa-whatsapp"></i>
+</a>
     <script>
       document.getElementById('bookingForm').addEventListener('submit', function (e) {
         e.preventDefault();
