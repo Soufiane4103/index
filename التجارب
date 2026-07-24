@@ -20,6 +20,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18304102636"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+// Google Ads
+gtag('config', 'AW-18304102636');
+
+// Google Analytics 4
+gtag('config', 'G-D6E523T09N');
+</script>
+    
     <style>
       * {
         margin: 0;
@@ -64,6 +78,146 @@
         color: #fff;
         font-size: 30px;
         font-weight: 800;
+      }
+
+      .logo img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+      }
+
+      nav ul a {
+        color: #fff;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul a:hover {
+        color: #ffd700;
+      }
+
+      header {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: url('https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png') center/cover;
+        animation: slider 28s infinite;
+      }
+
+      header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      @keyframes slider {
+        0% { background-image: url('https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png'); }
+        20% { background-image: url('https://i.ibb.co/KcMny4Ds/Chat-GPT-Image-20-2026-10-48-56.png'); }
+        40% { background-image: url('https://i.ibb.co/39qvnxvz/scene-final-contact.png'); }
+        60% { background-image: url('https://i.ibb.co/nM7Csvvs/sufian-clean-luxury.png'); }
+        80% { background-image: url('https://i.ibb.co/XfDGnPCF/sufian-clean-tech.png'); }
+        100% { background-image: url('https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png'); }
+      }
+
+      .hero {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        color: white;
+        z-index: 10;
+      }
+
+      .hero img {
+        width: 140px;
+        margin: auto;
+        margin-bottom: 25px;
+      }
+
+      .hero h1 {
+        font-size: 70px;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+      }
+
+      .hero p {
+        max-width: 900px;
+        margin: auto;
+        font-size: 22px;
+        line-height: 2;
+      }
+
+      .hero-buttons {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      .hero-buttons a {
+        padding: 18px 38px;
+        border-radius: 60px;
+        font-size: 22px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: 0.35s;
+      }
+
+      .call-btn {
+        background: #111;
+        color: #fff;
+      }
+
+      .call-btn:hover {
+        background: #000;
+        transform: translateY(-6px);
+      }
+
+      .whatsapp-btn {
+        background: linear-gradient(135deg, #ffd700, #c9a100);
+        color: #111;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-6px);
+      }
+
+      .whatsapp-btn i {
+        font-size: 28px;
+      }
+
+      .stats {
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+        z-index: 20;
+      }
       }
 
       .logo img {
