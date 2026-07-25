@@ -32,7 +32,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<!-- Google tag (gtag.js) - واحد فقط -->
+<!-- Google tag (gtag.js) - single instance -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18304102636"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -72,803 +72,137 @@
 </script>
 
 <style>
-/* =====================================================
-   MOBILE FIX - SUFIAN CLEAN SERVICES
-   ===================================================== */
+/* Variables & reset */
+:root{
+  --header-h:72px;           /* اضبط إن كان ارتفاع الهيدر مختلف */
+  --banner-h-desktop:360px;
+  --banner-h-tablet:240px;
+  --banner-h-mobile:160px;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ height:100%; direction:rtl; -webkit-text-size-adjust:100%; }
+body{
+  font-family:'Cairo',sans-serif;
+  background:#f7f8fa;
+  color:#222;
+  line-height:1.9;
+  overflow-x:hidden; /* يمنع التمرير الأفقي */
+}
 
+/* Container */
+.container{ width:min(1280px,95%); margin-inline:auto; }
+
+/* Links */
+a{ color:inherit; text-decoration:none; transition:.25s; }
+
+/* Header */
+header{
+  position:fixed; top:0; left:0; right:0; height:var(--header-h); z-index:10000;
+  background:#ffffff; box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+.navbar{
+  max-width:1280px; width:100%; margin:auto; padding:12px 20px;
+  display:flex; justify-content:space-between; align-items:center; gap:20px; height:100%;
+}
+.logo{ display:flex; align-items:center; gap:12px; }
+.logo img{ width:55px; height:55px; }
+.logo h2{ font-size:22px; margin:0; }
+nav{ display:flex; gap:16px; align-items:center; }
+.header-buttons{ display:flex; gap:12px; align-items:center; }
+.call-btn, .whatsapp-btn{ padding:10px 20px; border-radius:50px; font-weight:700; }
+.call-btn{ background:#0B8A43; color:#fff; }
+.whatsapp-btn{ background:#25D366; color:#fff; }
+
+/* Floating buttons */
+.floating-buttons{ position:fixed; bottom:22px; right:22px; z-index:9999; display:flex; flex-direction:column; gap:12px; }
+.floating-btn{ width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:#fff; box-shadow:0 6px 25px rgba(0,0,0,.15); text-decoration:none; }
+.floating-whatsapp{ background:linear-gradient(135deg,#25D366 0%,#0B8A43 100%); }
+.floating-phone{ background:#FFD700; color:#0B8A43; }
+.floating-home{ background:#0B8A43; }
+
+/* HERO fixed and centered under header */
+.hero{
+  position:fixed;
+  top:var(--header-h); left:0; right:0;
+  z-index:9998;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://i.ibb.co/3mcRBHqp/post-construction-cleanup.png") center center/cover no-repeat;
+  box-shadow:0 6px 30px rgba(0,0,0,.08);
+  overflow:hidden;
+  padding:0 16px;
+  height:var(--banner-h-desktop);
+}
+@media (max-width:992px){ .hero{ height:var(--banner-h-tablet); } }
+@media (max-width:576px){ .hero{ height:var(--banner-h-mobile); } }
+
+/* Ensure content inside hero is centered and not pushed left */
+.hero .container{ display:flex; align-items:center; justify-content:center; height:100%; padding:0; }
+.hero-content{ max-width:900px; text-align:center; color:#fff; margin-inline:auto; }
+.hero-content h1{ font-size:44px; line-height:1.15; margin-bottom:8px; font-weight:900; }
+@media (max-width:992px){ .hero-content h1{ font-size:34px; } }
+@media (max-width:576px){ .hero-content h1{ font-size:24px; } }
+.hero-content p{ font-size:17px; margin-bottom:12px; color:#fff; opacity:.95; }
+.hero-buttons{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.hero-buttons a{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border-radius:30px; font-weight:700; background:#0B8A43; color:#fff; }
+
+/* Push main content down so it's not hidden by fixed header + hero */
+main{ padding-top: calc(var(--header-h) + var(--banner-h-desktop) + 24px); }
+@media (max-width:992px){ main{ padding-top: calc(var(--header-h) + var(--banner-h-tablet) + 20px); } }
+@media (max-width:576px){ main{ padding-top: calc(var(--header-h) + var(--banner-h-mobile) + 16px); } }
+
+/* Sections */
+.section-title{ text-align:center; margin-bottom:24px; }
+.section-title span{ display:inline-block; background:#dff6e8; color:#0B8A43; padding:8px 18px; border-radius:30px; font-weight:700; margin-bottom:12px; }
+.section-title h2{ font-size:36px; margin:12px 0; color:#111; }
+.section-title p{ font-size:18px; color:#666; max-width:900px; margin-inline:auto; line-height:1.9; }
+
+/* Stats */
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.stat{ background:#fff; border-radius:18px; padding:28px; text-align:center; box-shadow:0 12px 35px rgba(0,0,0,.06); }
+.stat i{ font-size:36px; color:#0B8A43; margin-bottom:8px; }
+.stat h2{ font-size:34px; color:#0B8A43; margin-bottom:6px; }
+
+/* Video */
+.video-wrapper{ position:relative; width:100%; max-width:900px; padding-bottom:56.25%; height:0; overflow:hidden; margin-inline:auto; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,.12); }
+.video-wrapper iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+/* Services */
+.services-grid{ display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+.service-card{ background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,.08); transition:.35s; }
+.service-card img{ width:100%; height:280px; object-fit:cover; transition:transform .6s; }
+.service-card:hover img{ transform:scale(1.04); }
+.service-content{ padding:28px; }
+.service-content h3{ font-size:26px; color:#0B8A43; margin-bottom:12px; font-weight:800; }
+.service-content p{ font-size:17px; color:#555; line-height:1.9; }
+
+/* Gallery / Why-us / Testimonials / Steps / FAQ - compact styles to preserve original content */
+.services-grid.small-gap{ gap:18px; }
+.testimonials .service-card .service-content{ padding:22px; }
+.faq-item{ margin-bottom:14px; }
+.counter{ font-weight:800; color:#0B8A43; }
+
+/* Responsive tweaks */
 @media (max-width:992px){
-.container{
-    width:96%;
-    margin:auto;
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .hero-content p{ font-size:15px; }
+  .service-card img{ height:220px; }
 }
-header{
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    width:100%;
-    z-index:9999;
-}
-.navbar{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:12px 15px;
-    gap:15px;
-}
-.logo{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-}
-.logo img{
-    width:55px;
-    height:55px;
-}
-.logo h2{
-    font-size:22px;
-    text-align:center;
-}
-nav{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-nav a{
-    font-size:16px;
-    padding:5px 10px;
-}
-.header-buttons{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-.call-btn,
-.whatsapp-btn{
-    width:100%;
-    text-align:center;
-    padding:12px 20px;
-    font-size:15px;
-}
-.hero-content{
-    text-align:center;
-}
-.hero-content h1{
-    font-size:34px;
-}
-.hero-content p{
-    font-size:17px;
-}
-.hero-buttons{
-    flex-direction:column;
-    align-items:center;
-}
-.hero-buttons a{
-    width:100%;
-    max-width:340px;
-    justify-content:center;
-}
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:160px 20px 80px;
-    background-position:center;
-    background-size:cover;
-}
-.hero-content{
-    max-width:100%;
-    text-align:center;
-}
-.hero-content h1{
-    font-size:40px;
-    line-height:1.5;
-}
-.hero-content p{
-    font-size:18px;
-    line-height:1.9;
-}
-.hero-buttons{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
-}
-.hero-buttons a{
-    width:100%;
-    max-width:340px;
-    justify-content:center;
-}
-.hero-content{
-max-width:100%;
-text-align:center;
-}
-.hero-content h1{
-font-size:38px;
-line-height:1.5;
-}
-.hero-content p{
-font-size:18px;
-}
-.hero-buttons{
-justify-content:center;
-}
-.hero-buttons a{
-width:100%;
-justify-content:center;
-}
-.stats{
-margin-top:0;
-}
-.stats-grid{
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-}
-.section-title h2{
-font-size:34px;
-}
-.section-title p{
-font-size:17px;
-}
-.services-grid{
-grid-template-columns:1fr;
-}
-.service-card img{
-height:240px;
-}
-.service-content{
-padding:22px;
-}
-.service-content h3{
-font-size:28px;
-}
-.service-content p{
-font-size:17px;
-}
-.service-buttons{
-flex-direction:column;
-}
-.service-buttons a{
-width:100%;
-}
-.video-wrapper{
-border-radius:18px;
-}
-.floating-btn{
-width:56px;
-height:56px;
-font-size:26px;
-}
-iframe{
-width:100%;
-}
-}
-
 @media (max-width:576px){
-section{
-padding:60px 0;
-}
-.hero{
-padding-top:150px;
-}
-.hero-content h1{
-font-size:30px;
-}
-.hero-content p{
-font-size:16px;
-}
-.hero-buttons a{
-font-size:17px;
-padding:15px;
-}
-.section-title h2{
-font-size:28px;
-}
-.section-title p{
-font-size:15px;
-}
-.stats-grid{
-grid-template-columns:1fr;
-}
-.stat{
-padding:25px;
-}
-.stat h2{
-font-size:34px;
-}
-.stat p{
-font-size:16px;
-}
-.service-card img{
-height:210px;
-}
-.service-content h3{
-font-size:24px;
-}
-.service-content p{
-font-size:16px;
-}
-.logo h2{
-font-size:20px;
-}
-nav{
-gap:10px;
-}
-nav a{
-font-size:15px;
-}
-.call-btn,
-.whatsapp-btn{
-width:100%;
-text-align:center;
-}
-body{
-overflow-x:hidden;
-}
-}
-/* ===========================
-TABLET OPTIMIZATION
-=========================== */
-
-@media (max-width:768px){
-.navbar{
-flex-direction:column;
-align-items:center;
-}
-.logo{
-flex-direction:column;
-text-align:center;
-gap:10px;
-}
-.header-buttons{
-display:flex;
-flex-direction:column;
-width:100%;
-}
-.header-buttons a{
-width:100%;
-text-align:center;
-}
-.hero{
-padding-top:170px;
-}
-.hero-content{
-text-align:center;
-}
-.hero-buttons{
-flex-direction:column;
-align-items:center;
-}
-.hero-buttons a{
-width:100%;
-max-width:360px;
-}
-.video-container{
-padding:0;
-}
-.video-caption{
-font-size:16px;
-padding:0 10px;
-}
-.service-content{
-text-align:center;
-}
-.service-card{
-border-radius:18px;
-}
-.service-card img{
-border-radius:18px 18px 0 0;
-}
-.service-buttons{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-.section-title{
-margin-bottom:40px;
-}
-.section-title span{
-font-size:14px;
-}
-.stat i{
-font-size:38px;
-}
-.stat h2{
-font-size:30px;
-}
-.stat p{
-font-size:15px;
-}
+  .stats-grid{ grid-template-columns:1fr; }
+  .hero-content{ padding:0 10px; }
+  .service-card img{ height:180px; }
+  .floating-buttons{ right:12px; bottom:12px; }
 }
 
-/* ===========================
-SMALL MOBILE
-========================== */
-
-@media (max-width:480px){
-.logo img{
-width:50px;
-height:50px;
-}
-.logo h2{
-font-size:18px;
-}
-.hero-content h1{
-font-size:26px;
-}
-.hero-content p{
-font-size:15px;
-line-height:1.9;
-}
-.service-card img{
-height:190px;
-}
-.service-content{
-padding:18px;
-}
-.service-content h3{
-font-size:22px;
-}
-.service-content p{
-font-size:15px;
-line-height:1.9;
-}
-.floating-buttons{
-right:10px;
-bottom:10px;
-}
-.floating-btn{
-width:52px;
-height:52px;
-font-size:22px;
-}
-}
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-font-family:'Cairo',sans-serif;
-}
-body{
-background:#f7f8fa;
-color:#222;
-overflow-x:hidden;
-line-height:1.9;
-}
-img{
-max-width:100%;
-display:block;
-}
-a{
-text-decoration:none;
-transition:.35s;
-}
-.container{
-width:min(1280px,95%);
-margin:auto;
-}
-section{
-padding:90px 0;
-}
-/*==========================
-FLOATING BUTTONS
-==========================*/
-.floating-buttons{
-position:fixed;
-bottom:25px;
-right:25px;
-z-index:9998;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-.floating-btn{
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-color:#fff;
-text-decoration:none;
-box-shadow:0 5px 25px rgba(0,0,0,.3);
-transition:.3s;
-animation:bounce 2s infinite;
-}
-.floating-btn:hover{
-transform:scale(1.1);
-box-shadow:0 8px 35px rgba(0,0,0,.4);
-}
-.floating-whatsapp{
-background:linear-gradient(135deg, #25D366 0%, #0B8A43 100%);
-}
-.floating-whatsapp:hover{
-background:linear-gradient(135deg, #1ba94d 0%, #066c34 100%);
-}
-.floating-phone{
-background:#FFD700;
-color:#0B8A43;
-}
-.floating-phone:hover{
-background:#FFC700;
-color:#066c34;
-}
-.floating-home{
-background:#0B8A43;
-color:#fff;
-}
-.floating-home:hover{
-background:#066c34;
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-@media (max-width:768px){
-.floating-buttons{
-bottom:15px;
-right:15px;
-}
-.floating-btn{
-width:58px;
-height:58px;
-font-size:28px;
-}
-}
-/*==========================
-HEADER
-==========================*/
-header{
-position:fixed;
-top:0;
-right:0;
-left:0;
-z-index:9999;
-background:#ffffff;
-box-shadow:0 5px 25px rgba(0,0,0,.08);
-}
-.navbar{
-    max-width:1280px;
-    width:100%;
-    margin:auto;
-    padding:15px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-/* تحسين العرض على الهاتف */
-@media (max-width:768px){
-.navbar{
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:12px 15px;
-    gap:15px;
-}
-.logo{
-    width:100%;
-    justify-content:center;
-}
-.logo img{
-    width:55px;
-    height:55px;
-}
-.logo h2{
-    font-size:22px;
-}
-nav{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-nav a{
-    font-size:16px;
-}
-.header-buttons{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-.header-buttons a{
-    width:100%;
-    text-align:center;
-}
-}
-nav a:hover{
-color:#0B8A43;
-}
-.header-buttons{
-display:flex;
-gap:15px;
-}
-.call-btn{
-background:#0B8A43;
-color:#fff;
-padding:13px 28px;
-border-radius:50px;
-font-weight:bold;
-}
-.call-btn:hover{
-background:#087738;
-}
-.whatsapp-btn{
-background:#25D366;
-color:#fff;
-padding:13px 28px;
-border-radius:50px;
-font-weight:bold;
-}
-.whatsapp-btn:hover{
-background:#18b657;
-}
-/*==========================
-HERO
-==========================*/
-.hero{
-min-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("https://i.ibb.co/3mcRBHqp/post-construction-cleanup.png") center center/cover;
-display:flex;
-align-items:center;
-}
-.hero-content{
-max-width:760px;
-color:#fff;
-}
-.hero-content h1{
-font-size:60px;
-line-height:1.4;
-margin-bottom:30px;
-font-weight:900;
-}
-.hero-content p{
-font-size:22px;
-line-height:2;
-margin-bottom:40px;
-color:#fff;
-}
-.hero-buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-.hero-buttons a{
-padding:18px 38px;
-border-radius:50px;
-font-size:20px;
-font-weight:bold;
-display:flex;
-align-items:center;
-gap:12px;
-}
-.hero-call{
-background:#0B8A43;
-color:#fff;
-}
-.hero-whatsapp{
-background:#25D366;
-color:#fff;
-}
-.hero-call:hover,
-.hero-whatsapp:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,.25);
-}
-/*==========================
-STATISTICS
-==========================*/
-.stats{
-margin-top:-70px;
-position:relative;
-z-index:5;
-}
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
-.stat{
-background:#fff;
-border-radius:20px;
-padding:35px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.4s;
-}
-.stat:hover{
-transform:translateY(-8px);
-}
-.stat i{
-font-size:45px;
-color:#0B8A43;
-margin-bottom:20px;
-}
-.stat h2{
-font-size:42px;
-color:#0B8A43;
-margin-bottom:10px;
-}
-.stat p{
-font-size:18px;
-font-weight:700;
-}
-/*==========================
-SECTION TITLE
-==========================*/
-.section-title{
-text-align:center;
-margin-bottom:70px;
-}
-.section-title span{
-display:inline-block;
-background:#dff6e8;
-color:#0B8A43;
-padding:10px 22px;
-border-radius:30px;
-font-weight:bold;
-margin-bottom:20px;
-}
-.section-title h2{
-font-size:48px;
-margin-bottom:20px;
-color:#111;
-}
-.section-title p{
-font-size:20px;
-max-width:900px;
-margin:auto;
-color:#666;
-line-height:2;
-}
-/*==========================
-VIDEO SECTION
-==========================*/
-.video-section{
-background:#ffffff;
-}
-.video-container{
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:50px;
-}
-.video-wrapper{
-position:relative;
-width:100%;
-max-width:800px;
-padding-bottom:56.25%;
-height:0;
-overflow:hidden;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-.video-wrapper iframe{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border:none;
-border-radius:20px;
-}
-.video-caption{
-text-align:center;
-font-size:20px;
-color:#666;
-line-height:2;
-max-width:800px;
-margin:auto;
-font-weight:500;
-}
-/*==========================
-SERVICES SECTION
-==========================*/
-.services{
-background:#ffffff;
-}
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-gap:35px;
-}
-.service-card{
-background:#fff;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.45s;
-position:relative;
-}
-.service-card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 55px rgba(0,0,0,.18);
-}
-.service-card img{
-width:100%;
-height:280px;
-object-fit:cover;
-transition:.6s;
-}
-.service-card:hover img{
-transform:scale(1.08);
-}
-.service-content{
-padding:30px;
-}
-.service-content h3{
-font-size:32px;
-color:#0B8A43;
-margin-bottom:20px;
-font-weight:800;
-}
-.service-content p{
-font-size:18px;
-line-height:2.1;
-color:#555;
-margin-bottom:25px;
-}
-.service-buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-.service-buttons a{
-flex:1;
-text-align:center;
-padding:14px;
-border-radius:40px;
-font-weight:700;
-font-size:17px;
-}
-.book-btn{
-background:#0B8A43;
-color:#fff;
-}
-.book-btn:hover{
-background:#066c34;
-}
-.whats-btn{
-background:#25D366;
-color:#fff;
-}
-.whats-btn:hover{
-background:#1ba94d;
-}
-.lazy-image{
-  /* دعم نمطي لو أردت استخدام class لصور مُؤجلة التحميل */
-  display:block;
-}
-/*==========================
-WHY CHOOSE US / GALLERY / ETC.
-==========================*/
+/* Prevent any accidental left shift by ensuring container margins are symmetric */
+.container{ margin-left:auto; margin-right:auto; }
 </style>
 </head>
 <body>
-<!-- ==========================
-FLOATING BUTTONS
-========================== -->
+
+<!-- Floating action buttons -->
 <div class="floating-buttons">
   <a href="index.html" class="floating-btn floating-home" title="العودة إلى الصفحة الرئيسية" aria-label="العودة إلى الصفحة الرئيسية">
     <i class="fas fa-home" aria-hidden="true"></i>
@@ -884,7 +218,7 @@ FLOATING BUTTONS
 </div>
 
 <header>
-  <div class="navbar">
+  <div class="navbar container">
     <div class="logo">
       <img src="https://i.ibb.co/r2HtxJFM/ef3684cb-9158-48bb-900a-f7a03992c1d3.png" alt="شركة سفيان كلين سيرفيس">
       <h2>سفيان كلين سيرفيس</h2>
@@ -898,382 +232,375 @@ FLOATING BUTTONS
 
     <div class="header-buttons">
       <a href="tel:+201278213966" class="call-btn" onclick="trackPhone()">اتصل الآن</a>
-      <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" onclick="trackWhatsapp()">واتساب</a>
+      <a href="https://wa.me/201278213966" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
     </div>
   </div>
 </header>
 
-<section class="hero">
+<!-- HERO: fixed under header, centered -->
+<section class="hero" role="banner" aria-label="الهيرو">
   <div class="container">
     <div class="hero-content">
       <h1>خدمات شركة سفيان كلين سيرفيس</h1>
-      <p>نوفر جميع خدمات تنظيف المنازل والشركات والفلل والقصور بأحدث المعدات ومواد تنظيف آمنة وفريق محترف لضمان أعلى مستوى من النظافة والجودة وراحة عملائنا في القاهرة والجيزة ومدينة 6 أكتوبر.</p>
+      <p class="hidden-mobile">نوفر جميع خدمات تنظيف المنازل والشركات والفلل والقصور بأحدث المعدات ومواد تنظيف آمنة وفريق محترف لضمان أعلى مستوى من النظافة والجودة.</p>
       <div class="hero-buttons">
-        <a href="tel:+201278213966" class="hero-call" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> اتصل الآن</a>
-        <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="hero-whatsapp" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> راسلنا عبر واتساب</a>
+        <a href="tel:+201278213966" onclick="trackPhone()" aria-label="اتصل الآن"><i class="fas fa-phone" aria-hidden="true"></i> اتصل الآن</a>
+        <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()" aria-label="راسلنا عبر واتساب"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat">
-        <i class="fas fa-users" aria-hidden="true"></i>
-        <h2>5000+</h2>
-        <p>عميل سعيد</p>
+<main>
+  <!-- Stats -->
+  <section class="stats" aria-label="الإحصائيات">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <h2 class="counter" data-target="5000">5000+</h2>
+          <p>عميل سعيد</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-house" aria-hidden="true"></i>
+          <h2 class="counter" data-target="3500">3500+</h2>
+          <p>منزل تم تنظيفه</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-building" aria-hidden="true"></i>
+          <h2 class="counter" data-target="1200">1200+</h2>
+          <p>شركة ومكتب</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-award" aria-hidden="true"></i>
+          <h2 class="counter" data-target="15">15+</h2>
+          <p>سنة خبرة</p>
+        </div>
       </div>
-      <div class="stat">
-        <i class="fas fa-house" aria-hidden="true"></i>
-        <h2>3500+</h2>
-        <p>منزل تم تنظيفه</p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video-section" aria-label="فيديو">
+    <div class="container">
+      <div class="section-title">
+        <span>فيديو توضيحي</span>
+        <h2>تعرف على خدماتنا</h2>
       </div>
-      <div class="stat">
-        <i class="fas fa-building" aria-hidden="true"></i>
-        <h2>1200+</h2>
-        <p>شركة ومكتب</p>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/bbmWQBpbd6w" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" title="فيديو خدمات شركة سفيان كلين سيرفيس"></iframe>
       </div>
-      <div class="stat">
-        <i class="fas fa-award" aria-hidden="true"></i>
-        <h2>15+</h2>
-        <p>سنة خبرة</p>
+      <div style="max-width:900px;margin-inline:auto;text-align:center;color:#666;margin-top:14px;">
+        مع شركة سفيان كلين سيرفيس، منزلك دائماً نظيف. نقدم خدمات تنظيف المنازل والشركات، والتنظيف بعد التشطيب، والتنظيف العميق للمنازل.
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="video-section">
-  <div class="container">
-    <div class="section-title">
-      <span>فيديو توضيحي</span>
-      <h2>تعرف على خدماتنا</h2>
+  <!-- Services -->
+  <section class="services" id="services" aria-label="خدماتنا">
+    <div class="container">
+      <div class="section-title">
+        <span>خدماتنا</span>
+        <h2>أفضل خدمات التنظيف الاحترافية</h2>
+        <p>نعتمد على أحدث أجهزة التنظيف ومواد آمنة صديقة للبيئة لنقدم خدمات متكاملة تحقق أعلى درجات النظافة والتعقيم مع الحفاظ على الأثاث والأرضيات وجميع ممتلكات العملاء.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/3mcRBHqp/post-construction-cleanup.png" alt="تنظيف بعد التشطيب">
+          <div class="service-content">
+            <h3>تنظيف بعد التشطيب</h3>
+            <p>إزالة بقايا الأسمنت والجبس والدهانات والأتربة الدقيقة من جميع الأسطح والأرضيات والزجاج بمعدات احترافية.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/w1WsxDC/post-construction-4.png" alt="التنظيف العميق">
+          <div class="service-content">
+            <h3>التنظيف العميق</h3>
+            <p>خدمة تنظيف عميق تشمل الأسقف، الجدران، المطابخ، الحمامات، وإزالة الدهون والبقع والجراثيم بأجهزة حديثة.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/gL1q56RQ/female-cleaning-team-1.png" alt="فريق تنظيف نسائي">
+          <div class="service-content">
+            <h3>فريق تنظيف نسائي محترف</h3>
+            <p>فريق نسائي مدرب يلتزم بالخصوصية والمواعيد ويستخدم أدوات آمنة لتنظيف المنازل والشقق بدقة عالية.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/6cDVLpwz/female-cleaning-team-2.png" alt="طاقم تنظيف متخصص">
+          <div class="service-content">
+            <h3>طاقم تنظيف متخصص</h3>
+            <p>فريق متمرس يستخدم معدات أوروبية ومواد صديقة للبيئة لتنظيف شامل وسريع مع الحفاظ على الأسطح.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/MDGx8Djf/sofa-cleaning-before-after.png" alt="تنظيف الانتريهات والكنب">
+          <div class="service-content">
+            <h3>تنظيف الانتريهات والكنب</h3>
+            <p>تنظيف بالبخار والاستخلاص لإزالة البقع والروائح مع الحفاظ على ألوان الأقمشة وجودتها.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/9H1TSqHk/marble-polishing-stages.png" alt="جلي وتلميع الرخام">
+          <div class="service-content">
+            <h3>جلي وتلميع الرخام</h3>
+            <p>إزالة الخدوش والبقع وإعادة اللمعان الطبيعي للأرضيات والسلالم والحوائط الرخامية.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img loading="lazy" src="https://i.ibb.co/qFmC2SSC/granite-polishing-detail.png" alt="تلميع الجرانيت">
+          <div class="service-content">
+            <h3>تلميع الجرانيت</h3>
+            <p>إعادة بريق الجرانيت وإزالة آثار الاستخدام مع الحفاظ على صلابة ولمعان الحجر الطبيعي.</p>
+            <div class="service-buttons">
+              <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">احجز الآن</a>
+              <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/bbmWQBpbd6w" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" title="فيديو خدمات شركة سفيان كلين سيرفيس"></iframe>
+  <!-- Gallery -->
+  <section class="gallery" aria-label="معرض الأعمال">
+    <div class="container">
+      <div class="section-title">
+        <span>معرض الأعمال</span>
+        <h2>نماذج من خدمات سفيان كلين سيرفيس</h2>
+        <p>نماذج قبل وبعد توضح جودة العمل باستخدام أحدث المعدات وفريق متخصص.</p>
+      </div>
+
+      <div class="services-grid small-gap">
+        <div class="service-card"><img loading="lazy" src="https://i.ibb.co/3mcRBHqp/post-construction-cleanup.png" alt="تنظيف بعد التشطيب"></div>
+        <div class="service-card"><img loading="lazy" src="https://i.ibb.co/MDGx8Djf/sofa-cleaning-before-after.png" alt="تنظيف الكنب"></div>
+        <div class="service-card"><img loading="lazy" src="https://i.ibb.co/9H1TSqHk/marble-polishing-stages.png" alt="جلي الرخام"></div>
+        <div class="service-card"><img loading="lazy" src="https://i.ibb.co/qFmC2SSC/granite-polishing-detail.png" alt="تلميع الجرانيت"></div>
+      </div>
     </div>
+  </section>
 
-    <div class="video-caption">
-      <p>مع شركة سفيان كلين سيرفيس، منزلك دائماً نظيف. نقدم خدمات تنظيف المنازل والشركات، والتنظيف بعد التشطيب، والتنظيف العميق للمنازل.</p>
-    </div>
-  </div>
-</section>
+  <!-- Why us -->
+  <section class="why-us" aria-label="لماذا نحن">
+    <div class="container">
+      <div class="section-title">
+        <span>لماذا نحن؟</span>
+        <h2>لماذا يختار العملاء سفيان كلين سيرفيس؟</h2>
+        <p>نقدّم خدمة احترافية، معدات حديثة، فريق مدرّب، والتزام بالمواعيد مع ضمان جودة العمل.</p>
+      </div>
 
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-title">
-      <span>خدماتنا</span>
-      <h2>أفضل خدمات التنظيف الاحترافية</h2>
-      <p>نعتمد على أحدث أجهزة التنظيف ومواد آمنة صديقة للبيئة لنقدم خدمات متكاملة تحقق أعلى درجات النظافة والتعقيم مع الحفاظ على الأثاث والأرضيات وجميع ممتلكات العملاء.</p>
-    </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-user-check" style="font-size:48px;color:#0B8A43;margin-bottom:12px;" aria-hidden="true"></i>
+            <h3>فريق محترف</h3>
+            <p>فريق مدرّب بخبرة عالية في تنظيف جميع الأسطح.</p>
+          </div>
+        </div>
 
-    <div class="services-grid">
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-spray-can-sparkles" style="font-size:48px;color:#0B8A43;margin-bottom:12px;" aria-hidden="true"></i>
+            <h3>معدات حديثة</h3>
+            <p>أجهزة ومنظفات آمنة وفعّالة للحفاظ على ممتلكات العميل.</p>
+          </div>
+        </div>
 
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/3mcRBHqp/post-construction-cleanup.png" alt="تنظيف بعد التشطيب" class="lazy-image">
-        <div class="service-content">
-          <h3>تنظيف بعد التشطيب</h3>
-          <p>تعتبر مرحلة ما بعد التشطيب من أكثر المراحل التي تحتاج إلى خبرة وتجهيزات خاصة، لذلك توفر شركة سفيان كلين سيرفيس خدمة متكاملة لإزالة بقايا الأسمنت والجبس والدهانات والأتربة الدقيقة من جميع الأسطح والأرضيات والزجاج، مع استخدام معدات احترافية ومواد تنظيف آمنة تمنح المكان مظهرًا نظيفًا وجاهزًا للسكن أو التشغيل دون أي مجهود من العميل.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-clock" style="font-size:48px;color:#0B8A43;margin-bottom:12px;" aria-hidden="true"></i>
+            <h3>الالتزام بالمواعيد</h3>
+            <p>نحترم مواعيد العملاء ونلتزم بالدقة في التنفيذ.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-shield-check" style="font-size:48px;color:#0B8A43;margin-bottom:12px;" aria-hidden="true"></i>
+            <h3>ضمان الجودة</h3>
+            <p>مراجعة العمل قبل التسليم لضمان رضا العميل الكامل.</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/w1WsxDC/post-construction-4.png" alt="التنظيف العميق" class="lazy-image">
-        <div class="service-content">
-          <h3>التنظيف العميق</h3>
-          <p>نقدم خدمة تنظيف عميق للمنازل والشقق والفلل والمكاتب تشمل جميع الزوايا والأسقف والجدران والأرضيات والمطابخ والحمامات، مع إزالة الدهون والبقع والأتربة والجراثيم باستخدام أجهزة حديثة ومنظفات عالية الجودة، لتوفير بيئة صحية ونظيفة تمنح أفراد الأسرة أو الموظفين الراحة والأمان.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
+  <!-- Counters (repeated stats section) -->
+  <section class="stats" aria-label="أرقامنا الإضافية">
+    <div class="container">
+      <div class="section-title">
+        <span>أرقامنا</span>
+        <h2>إنجازات نفخر بها</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><i class="fas fa-smile" aria-hidden="true"></i><h2 class="counter" data-target="5000">5000+</h2><p>عميل سعيد</p></div>
+        <div class="stat"><i class="fas fa-home" aria-hidden="true"></i><h2 class="counter" data-target="3500">3500+</h2><p>منزل تم تنظيفه</p></div>
+        <div class="stat"><i class="fas fa-building" aria-hidden="true"></i><h2 class="counter" data-target="1200">1200+</h2><p>شركة ومكتب</p></div>
+        <div class="stat"><i class="fas fa-award" aria-hidden="true"></i><h2 class="counter" data-target="15">15+</h2><p>سنة خبرة</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work steps -->
+  <section class="steps" aria-label="طريقة العمل">
+    <div class="container">
+      <div class="section-title">
+        <span>طريقة العمل</span>
+        <h2>كيف تتم الخدمة؟</h2>
+        <p>نهتم بتقديم تجربة سهلة وسريعة تبدأ من التواصل وحتى الانتهاء والتأكد من رضا العميل بالكامل.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-phone-volume" style="font-size:48px;color:#0B8A43;"></i>
+            <h3>1- تواصل معنا</h3>
+            <p>اتصل أو راسل عبر واتساب، يرد فريق خدمة العملاء فورًا.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-calendar-check" style="font-size:48px;color:#0B8A43;"></i>
+            <h3>2- تحديد الموعد</h3>
+            <p>نحدد موعد الزيارة ونرسل فريقًا مجهزًا بالكامل.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-broom" style="font-size:48px;color:#0B8A43;"></i>
+            <h3>3- تنفيذ الخدمة</h3>
+            <p>تنفيذ التنظيف باستخدام أجهزة ومنظفات احترافية.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content" style="text-align:center;">
+            <i class="fas fa-star" style="font-size:48px;color:#0B8A43;"></i>
+            <h3>4- تسليم المكان</h3>
+            <p>مراجعة العمل والتأكد من رضا العميل قبل المغادرة.</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/gL1q56RQ/female-cleaning-team-1.png" alt="فريق تنظيف نسائي" class="lazy-image">
-        <div class="service-content">
-          <h3>فريق تنظيف نسائي محترف</h3>
-          <p>توفر شركة سفيان كلين سيرفيس فريق تنظيف نسائي مدرب يتمتع بالخبرة والكفاءة لتنفيذ جميع أعمال تنظيف المنازل والشقق بدقة عالية، مع الالتزام الكامل بالمواعيد والمحافظة على خصوصية العملاء واستخدام أفضل أدوات التنظيف التي تحقق أعلى مستويات النظافة والتعقيم في جميع أنحاء المنزل.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
+  <!-- Testimonials -->
+  <section class="testimonials" aria-label="آراء العملاء">
+    <div class="container">
+      <div class="section-title">
+        <span>آراء العملاء</span>
+        <h2>ثقة عملائنا هي أكبر نجاح لنا</h2>
+        <p>نفخر بثقة عملائنا في القاهرة والجيزة و6 أكتوبر.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-content">
+            <div style="color:#FFD700;font-size:20px;margin-bottom:10px;">★★★★★</div>
+            <h3>أحمد محمد</h3>
+            <p>تعاملت مع الشركة لتنظيف فيلا بعد التشطيب وكانت النتيجة رائعة، التزموا بالمواعيد وقدموا خدمة احترافية.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content">
+            <div style="color:#FFD700;font-size:20px;margin-bottom:10px;">★★★★★</div>
+            <h3>سارة علي</h3>
+            <p>طلبت تنظيفًا عميقًا والكنب، والنتيجة ممتازة، أنصح بالتعامل مع سفيان كلين سيرفيس.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content">
+            <div style="color:#FFD700;font-size:20px;margin-bottom:10px;">★★★★★</div>
+            <h3>محمد حسن</h3>
+            <p>فريق محترف وأسعار مناسبة مقارنة بجودة الخدمة.</p>
           </div>
         </div>
       </div>
-
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/6cDVLpwz/female-cleaning-team-2.png" alt="طاقم تنظيف متخصص" class="lazy-image">
-        <div class="service-content">
-          <h3>طاقم تنظيف متخصص</h3>
-          <p>يمتلك فريق سفيان كلين سيرفيس خبرة واسعة في تنظيف المنازل والشركات والفلل والقصور، ويستخدم أحدث المعدات الأوروبية ومواد تنظيف آمنة وصديقة للبيئة لضمان تنظيف شامل وسريع مع الحفاظ على جميع الأسطح والأثاث والمفروشات وإظهار المكان بأفضل صورة ممكنة.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/MDGx8Djf/sofa-cleaning-before-after.png" alt="تنظيف الانتريهات والكنب" class="lazy-image">
-        <div class="service-content">
-          <h3>تنظيف الانتريهات والكنب</h3>
-          <p>تعيد شركة سفيان كلين سيرفيس الحياة إلى الانتريهات والكنب وجميع المفروشات باستخدام أحدث أجهزة التنظيف بالبخار والاستخلاص، لإزالة البقع الصعبة والأتربة والروائح غير المرغوبة مع الحفاظ على ألوان الأقمشة وجودتها، لتستعيد المفروشات مظهرها الأنيق ونظافتها دون الحاجة إلى استبدالها.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/9H1TSqHk/marble-polishing-stages.png" alt="جلي وتلميع الرخام" class="lazy-image">
-        <div class="service-content">
-          <h3>جلي وتلميع الرخام</h3>
-          <p>نقدم خدمة احترافية لجلي وتلميع الرخام باستخدام أحدث ماكينات الجلي والتلميع لإزالة الخدوش والبقع وآثار الاستخدام، مع إعادة اللمعان الطبيعي للأرضيات والسلالم والحوائط الرخامية، مما يمنح المكان مظهرًا فاخرًا ويحافظ على الرخام لأطول فترة ممكنة.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img loading="lazy" src="https://i.ibb.co/qFmC2SSC/granite-polishing-detail.png" alt="تلميع الجرانيت" class="lazy-image">
-        <div class="service-content">
-          <h3>تلميع الجرانيت</h3>
-          <p>تعتمد شركة سفيان كلين سيرفيس على معدات متطورة لإعادة بريق الجرانيت وإزالة آثار الاستخدام والبقع والخدوش السطحية، مع المحافظة على صلابة ولمعان الحجر الطبيعي، ليظهر بأفضل صورة ويمنح المكان مظهرًا راقيًا يعكس النظافة والفخامة.</p>
-          <div class="service-buttons">
-            <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> احجز الآن</a>
-            <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="whats-btn" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="gallery">
-  <div class="container">
-    <div class="section-title">
-      <span>معرض الأعمال</span>
-      <h2>نماذج من خدمات سفيان كلين سيرفيس</h2>
-      <p>نفخر بتقديم خدمات تنظيف احترافية تحقق فرقًا واضحًا قبل وبعد التنفيذ، مع الاعتماد على أحدث المعدات وفريق عمل متخصص للوصول إلى أفضل النتائج التي نالت رضا آلاف العملاء.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card"><img loading="lazy" src="https://i.ibb.co/3mcRBHqp/post-construction-cleanup.png" alt="تنظيف بعد التشطيب" class="lazy-image"></div>
-      <div class="service-card"><img loading="lazy" src="https://i.ibb.co/MDGx8Djf/sofa-cleaning-before-after.png" alt="تنظيف الكنب" class="lazy-image"></div>
-      <div class="service-card"><img loading="lazy" src="https://i.ibb.co/9H1TSqHk/marble-polishing-stages.png" alt="جلي الرخام" class="lazy-image"></div>
-      <div class="service-card"><img loading="lazy" src="https://i.ibb.co/qFmC2SSC/granite-polishing-detail.png" alt="تلميع الجرانيت" class="lazy-image"></div>
-    </div>
-  </div>
-</section>
-
-<section class="why-us">
-  <div class="container">
-    <div class="section-title">
-      <span>لماذا نحن؟</span>
-      <h2>لماذا يختار العملاء سفيان كلين سيرفيس؟</h2>
-      <p>نعمل وفق أعلى معايير الجودة لنقدم خدمات تنظيف احترافية تناسب المنازل والشركات والفلل والقصور، مع الالتزام بالمواعيد واستخدام أحدث الأجهزة والمنظفات الآمنة للحصول على أفضل النتائج.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-user-check" style="font-size:60px;color:#0B8A43;margin-bottom:20px;" aria-hidden="true"></i>
-          <h3>فريق محترف</h3>
-          <p>يضم فريقنا نخبة من الفنيين المدربين على أحدث تقنيات التنظيف، مع خبرة كبيرة في التعامل مع جميع أنواع الأرضيات والمفروشات والزجاج والرخام لضمان أفضل نتيجة في كل زيارة.</p>
-        </div>
+  <!-- FAQ -->
+  <section class="faq" aria-label="الأسئلة الشائعة">
+    <div class="container">
+      <div class="section-title">
+        <span>الأسئلة الشائعة</span>
+        <h2>الأسئلة الأكثر شيوعًا</h2>
       </div>
 
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-spray-can-sparkles" style="font-size:60px;color:#0B8A43;margin-bottom:20px;" aria-hidden="true"></i>
-          <h3>معدات حديثة</h3>
-          <p>نستخدم أجهزة تنظيف متطورة ومنظفات آمنة وصديقة للبيئة تساعد على إزالة الأوساخ والبقع والجراثيم بكفاءة عالية مع المحافظة على جميع الأسطح والمفروشات.</p>
-        </div>
+      <div class="faq-item">
+        <h3>هل تعملون طوال أيام الأسبوع؟</h3>
+        <p>نعم، نقدم خدماتنا طوال أيام الأسبوع مع إمكانية الحجز في الأوقات المناسبة.</p>
       </div>
 
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-clock" style="font-size:60px;color:#0B8A43;margin-bottom:20px;" aria-hidden="true"></i>
-          <h3>الالتزام بالمواعيد</h3>
-          <p>نلتزم بالحضور في الموعد المحدد وإنجاز جميع الأعمال في الوقت المتفق عليه مع المحافظة على جودة التنفيذ وراحة العميل طوال فترة العمل.</p>
-        </div>
+      <div class="faq-item">
+        <h3>هل مواد التنظيف آمنة؟</h3>
+        <p>نستخدم مواد تنظيف عالية الجودة وآمنة على الأطفال والحيوانات الأليفة.</p>
       </div>
 
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-shield-check" style="font-size:60px;color:#0B8A43;margin-bottom:20px;" aria-hidden="true"></i>
-          <h3>ضمان الجودة</h3>
-          <p>نسعى دائمًا لتحقيق رضا عملائنا من خلال مراجعة جميع الأعمال بعد الانتهاء والتأكد من تقديم خدمة تنظيف احترافية تليق بثقتكم بنا.</p>
-        </div>
+      <div class="faq-item">
+        <h3>هل يمكن الحجز عبر واتساب؟</h3>
+        <p>نعم، يمكنك التواصل عبر واتساب أو الاتصال المباشر وسيتم تأكيد الحجز فورًا.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>ما المناطق التي تخدمونها؟</h3>
+        <p>نخدم القاهرة والجيزة ومدينة 6 أكتوبر والمناطق المجاورة.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="stats">
-  <div class="container">
-    <div class="section-title">
-      <span>أرقامنا</span>
-      <h2>إنجازات نفخر بها</h2>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat">
-        <i class="fas fa-smile" aria-hidden="true"></i>
-        <h2 class="counter" data-target="5000">0</h2>
-        <p>عميل سعيد</p>
-      </div>
-      <div class="stat">
-        <i class="fas fa-home" aria-hidden="true"></i>
-        <h2 class="counter" data-target="3500">0</h2>
-        <p>منزل تم تنظيفه</p>
-      </div>
-      <div class="stat">
-        <i class="fas fa-building" aria-hidden="true"></i>
-        <h2 class="counter" data-target="1200">0</h2>
-        <p>شركة ومكتب</p>
-      </div>
-      <div class="stat">
-        <i class="fas fa-award" aria-hidden="true"></i>
-        <h2 class="counter" data-target="15">0</h2>
-        <p>سنة خبرة</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="steps">
-  <div class="container">
-    <div class="section-title">
-      <span>طريقة العمل</span>
-      <h2>كيف تتم الخدمة؟</h2>
-      <p>نهتم بتقديم تجربة سهلة وسريعة تبدأ من لحظة التواصل معنا وحتى الانتهاء من أعمال التنظيف والتأكد من رضا العميل بالكامل.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-phone-volume" style="font-size:60px;color:#0B8A43;" aria-hidden="true"></i>
-          <h3>1- تواصل معنا</h3>
-          <p>اتصل بنا أو أرسل رسالة عبر واتساب، وسيقوم فريق خدمة العملاء بالرد عليك فورًا لتحديد نوع الخدمة والموعد المناسب.</p>
-        </div>
+  <!-- Contact -->
+  <section id="contact" class="contact-section" aria-label="اتصل بنا">
+    <div class="container">
+      <div class="section-title">
+        <span>احجز الآن</span>
+        <h2>اطلب الخدمة في أقل من دقيقة</h2>
+        <p>اتصل أو أرسل رسالة عبر واتساب وسيتم تأكيد الحجز فورًا.</p>
       </div>
 
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-calendar-check" style="font-size:60px;color:#0B8A43;" aria-hidden="true"></i>
-          <h3>2- تحديد الموعد</h3>
-          <p>نحدد موعد الزيارة بما يناسبك ونرسل فريقًا مجهزًا بالكامل لتنفيذ الخدمة في الوقت المحدد دون أي تأخير.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-broom" style="font-size:60px;color:#0B8A43;" aria-hidden="true"></i>
-          <h3>3- تنفيذ الخدمة</h3>
-          <p>يقوم فريقنا بتنفيذ أعمال التنظيف باستخدام أحدث المعدات والمواد الاحترافية مع الاهتمام بجميع التفاصيل الصغيرة.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-content" style="text-align:center;">
-          <i class="fas fa-star" style="font-size:60px;color:#0B8A43;" aria-hidden="true"></i>
-          <h3>4- تسليم المكان</h3>
-          <p>بعد الانتهاء تتم مراجعة جميع الأعمال والتأكد من رضا العميل قبل مغادرة الموقع، مع تقديم النصائح للحفاظ على النظافة لأطول فترة.</p>
-        </div>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="tel:+201278213966" class="book-btn" onclick="trackPhone()">اتصل الآن</a>
+        <a href="https://wa.me/201278213966" class="whats-btn" target="_blank" rel="noopener noreferrer" onclick="trackWhatsapp()">راسلنا عبر واتساب</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <div class="section-title">
-      <span>آراء العملاء</span>
-      <h2>ثقة عملائنا هي أكبر نجاح لنا</h2>
-      <p>نفخر بثقة عملائنا في القاهرة والجيزة و6 أكتوبر، ونسعى دائمًا لتقديم خدمات تنظيف احترافية تتجاوز توقعاتهم باستخدام أحدث المعدات وفريق عمل متخصص.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-content">
-          <div style="color:#FFD700;font-size:22px;margin-bottom:15px;">★★★★★</div>
-          <h3>أحمد محمد</h3>
-          <p>تعاملت مع شركة سفيان كلين سيرفيس لتنظيف الفيلا بعد التشطيب وكانت النتيجة أكثر من رائعة، التزم الفريق بالمواعيد وأنهى العمل باحترافية عالية، وسأتعامل معهم مرة أخرى بكل تأكيد.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-content">
-          <div style="color:#FFD700;font-size:22px;margin-bottom:15px;">★★★★★</div>
-          <h3>سارة علي</h3>
-          <p>طلبت تنظيفًا عميقًا للشقة وتنظيف الكنب، وكانت النتيجة ممتازة، اختفت جميع البقع وعاد الأثاث وكأنه جديد، أنصح بالتعامل مع سفيان كلين سيرفيس.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-content">
-          <div style="color:#FFD700;font-size:22px;margin-bottom:15px;">★★★★★</div>
-          <h3>محمد حسن</h3>
-          <p>أفضل شركة تنظيف تعاملت معها، فريق محترف ومنظم، والأسعار مناسبة جدًا مقارنة بجودة الخدمة والنتيجة النهائية.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="faq">
-  <div class="container">
-    <div class="section-title">
-      <span>الأسئلة الشائعة</span>
-      <h2>الأسئلة الأكثر شيوعًا</h2>
-    </div>
-
-    <div class="faq-item">
-      <h3>هل تعملون طوال أيام الأسبوع؟</h3>
-      <p>نعم، نقدم خدماتنا طوال أيام الأسبوع مع إمكانية الحجز في الأوقات المناسبة للعميل.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>هل مواد التنظيف آمنة؟</h3>
-      <p>نستخدم مواد تنظيف عالية الجودة وآمنة على الأطفال والحيوانات الأليفة وتحافظ على الأثاث والأرضيات.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>هل يمكن الحجز عبر واتساب؟</h3>
-      <p>نعم، يمكنك التواصل معنا عبر واتساب أو الاتصال المباشر وسيتم تأكيد الحجز فورًا.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>ما المناطق التي تخدمونها؟</h3>
-      <p>نخدم القاهرة والجيزة ومدينة 6 أكتوبر والمناطق المجاورة مع سرعة الوصول في المواعيد المحددة.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact-section">
-  <div class="container">
-    <div class="section-title">
-      <span>احجز الآن</span>
-      <h2>اطلب الخدمة في أقل من دقيقة</h2>
-      <p>يمكنك الاتصال بنا مباشرة أو إرسال رسالة عبر واتساب، وسيقوم فريق خدمة العملاء بالرد عليك فورًا لتأكيد الحجز وتحديد الموعد المناسب.</p>
-    </div>
-
-    <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
-      <a href="tel:+201278213966" class="hero-call" onclick="trackPhone()"><i class="fas fa-phone" aria-hidden="true"></i> اتصل الآن</a>
-      <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="hero-whatsapp" onclick="trackWhatsapp()"><i class="fab fa-whatsapp" aria-hidden="true"></i> راسلنا عبر واتساب</a>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 </body>
 </html>
