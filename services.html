@@ -720,55 +720,66 @@ box-shadow:0 5px 25px rgba(0,0,0,.08);
 }
 
 .navbar{
+    max-width:1280px;
+    width:100%;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-max-width:1280px;
-margin:auto;
-padding:15px 25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
+/* تحسين العرض على الهاتف */
+@media (max-width:768px){
 
+.navbar{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:12px 15px;
+    gap:15px;
 }
 
 .logo{
-
-display:flex;
-align-items:center;
-gap:15px;
-
+    width:100%;
+    justify-content:center;
 }
 
 .logo img{
-
-width:65px;
-height:65px;
-border-radius:50%;
-object-fit:cover;
-
+    width:55px;
+    height:55px;
 }
 
 .logo h2{
-
-font-size:28px;
-font-weight:800;
-color:#0B8A43;
-
+    font-size:22px;
 }
 
 nav{
-
-display:flex;
-gap:35px;
-align-items:center;
-
+    width:100%;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 nav a{
+    font-size:16px;
+}
 
-font-size:18px;
-font-weight:700;
-color:#222;
+.header-buttons{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.header-buttons a{
+    width:100%;
+    text-align:center;
+}
 
 }
 
