@@ -146,56 +146,101 @@ gtag('event','scroll_50_percent');
 @media (max-width:992px){
 
 .container{
-width:96%;
+    width:96%;
+    margin:auto;
 }
 
 header{
-position:fixed;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    width:100%;
+    z-index:9999;
 }
 
 .navbar{
-padding:12px 15px;
-flex-wrap:wrap;
-justify-content:center;
-gap:12px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:12px 15px;
+    gap:15px;
 }
 
 .logo{
-width:100%;
-justify-content:center;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
 }
 
 .logo img{
-width:55px;
-height:55px;
+    width:55px;
+    height:55px;
 }
 
 .logo h2{
-font-size:22px;
-text-align:center;
+    font-size:22px;
+    text-align:center;
 }
 
 nav{
-width:100%;
-justify-content:center;
-flex-wrap:wrap;
-gap:18px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 nav a{
-font-size:16px;
+    font-size:16px;
+    padding:5px 10px;
 }
 
 .header-buttons{
-width:100%;
-justify-content:center;
-flex-wrap:wrap;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
 .call-btn,
 .whatsapp-btn{
-padding:12px 20px;
-font-size:15px;
+    width:100%;
+    text-align:center;
+    padding:12px 20px;
+    font-size:15px;
+}
+
+.hero{
+    padding-top:220px;
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:34px;
+}
+
+.hero-content p{
+    font-size:17px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.hero-buttons a{
+    width:100%;
+    max-width:340px;
+    justify-content:center;
 }
 
 .hero{
