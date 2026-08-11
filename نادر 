@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سفيان كلين | تنظيف المنازل والشركات</title>
+    <meta
+      name="description"
+      content="شركة سفيان كلين لتنظيف المنازل والشركات والفلل والقصور وجلي الرخام والتنظيف بعد التشطيب"
+    />
+    <meta
+      name="keywords"
+      content="تنظيف منازل, تنظيف شركات, تنظيف فلل, تنظيف قصور, جلي رخام, تنظيف بعد التشطيب, سفيان كلين"
+    />
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18304102636"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Google Ads
+      gtag('config', 'AW-18304102636');
+
+      // Google Analytics 4
+      gtag('config', 'G-D6E523T09N');
+    </script>
+    
+    <style>
+      /* =========================
+         التنسيقات العامة والأساسية
+      ========================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Cairo', sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f6f8f9;
+        color: #222;
+        overflow-x: hidden;
+        direction: rtl;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* =========================
+         القائمة العلوية Navigation
+      ========================== */
+      nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 7%;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(12px);
+        z-index: 99999;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 800;
+      }
+
+      .logo img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+      }
+
+      nav ul a {
+        color: #fff;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul a:hover {
+        color: #ffd700;
+      }
+
+      /* =========================
+         الترويسة والأنيميشن Header
+      ========================== */
+      header {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: url('https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png') center/cover;
+        animation: slider 28s infinite;
+      }
+
+      header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      @keyframes slider {
+        0% { background-image: url('https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png'); }
+        20% { background-image: url('https://i.ibb.co/KcMny4Ds/Chat-GPT-Image-20-2026-10-48-56.png'); }
+        40% { background-image: url('https://i.ibb.co/39qvnxvz/scene-final-contact.png'); }
+        60% { background-image: url('https://i.ibb.co/nM7Csvvs/sufian-clean-luxury.png'); }
+        80% { background-image: url('https://i.ibb.co/XfDGnPCF/sufian-clean-tech.png'); }
+        100% { background-image: url('https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png'); }
+      }
+
+      .hero {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        color: white;
+        z-index: 10;
+      }
+
+      .hero img {
+        width: 140px;
+        margin: auto;
+        margin-bottom: 25px;
+      }
+
+      .hero h1 {
+        font-size: 70px;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+      }
+
+      .hero p {
+        max-width: 900px;
+        margin: auto;
+        font-size: 22px;
+        line-height: 2;
+      }
+
+      .hero-buttons {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      .hero-buttons a {
+        padding: 18px 38px;
+        border-radius: 60px;
+        font-size: 22px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: 0.35s;
+      }
+
+      .call-btn {
+        background: #111;
+        color: #fff;
+      }
+
+      .call-btn:hover {
+        background: #000;
+        transform: translateY(-6px);
+      }
+
+      .whatsapp-btn {
+        background: linear-gradient(135deg, #ffd700, #c9a100);
+        color: #111;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-6px);
+      }
+
+      .whatsapp-btn i {
+        font-size: 28px;
+      }
+
+      /* =========================
+         إحصائيات الترويسة Stats
+      ========================== */
+      .stats {
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+        z-index: 20;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat h2 {
+        font-size: 50px;
+        color: #16a34a;
+      }
+
+      .stat p {
+        margin-top: 10px;
+        font-size: 19px;
+        color: #666;
+      }
+
+      /* =========================
+         قسم من نحن About
+      ========================== */
+      .about-section {
+        padding: 120px 8%;
+        background: #fff;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .about-text h2 {
+        font-size: 45px;
+        color: #16a34a;
+        margin-bottom: 25px;
+      }
+
+      .about-text p {
+        font-size: 20px;
+        line-height: 2;
+        color: #555;
+        margin-bottom: 35px;
+      }
+
+      .about-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .about-features div {
+        background: #f5fff8;
+        padding: 18px;
+        border-radius: 15px;
+        font-weight: bold;
+      }
+
+      .about-features i {
+        color: #16a34a;
+        margin-left: 8px;
+      }
+
+      /* =========================
+         قسم معرض الأعمال Gallery
+      ========================== */
+      .gallery-section {
+        width: 100%;
+        max-width: 1380px;
+        margin: 50px auto;
+        padding: 30px 20px;
+      }
+
+      .gallery-section > h2 {
+        margin: 0 0 10px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.5;
+        color: #16a34a;
+      }
+
+      .gallery-intro {
+        max-width: 950px;
+        margin: 0 auto 38px;
+        text-align: center;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 2;
+        color: #555;
+      }
+
+      .gallery-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      .gallery-card {
+        width: 100%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        border-radius: 18px;
+        box-shadow: 0 7px 24px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.13);
+      }
+
+      .gallery-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
+        background: #f1f3f2;
+        flex-shrink: 0;
+      }
+
+      .gallery-card:hover img {
+        opacity: 0.98;
+      }
+
+      .gallery-buttons {
+        display: flex;
+        gap: 9px;
+        width: 100%;
+        padding: 13px 14px 8px;
+      }
+
+      .gallery-buttons a {
+        flex: 1;
+        min-width: 0;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 9px 7px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 800;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .gallery-buttons a:hover {
+        transform: translateY(-2px);
+        opacity: 0.92;
+      }
+
+      .gallery-buttons i {
+        font-size: 18px;
+      }
+
+      .gallery-whatsapp {
+        background: #25d366;
+        color: #fff;
+      }
+
+      .gallery-call {
+        background: #111;
+        color: #fff;
+      }
+
+      .gallery-card h3 {
+        margin: 7px 18px 10px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.6;
+        color: #16a34a;
+      }
+
+      .gallery-card p {
+        margin: 0 18px 22px;
+        font-size: 15.5px;
+        font-weight: 500;
+        line-height: 1.95;
+        color: #444;
+        text-align: right;
+        flex-grow: 1;
+      }
+
+      .gallery-card::after {
+        content: '';
+        display: block;
+        width: 55px;
+        height: 4px;
+        margin: 0 auto 17px;
+        background: #16a34a;
+        border-radius: 20px;
+      }
+
+      /* كارت أفضل شركة تنظيف */
+      .best-cleaning-card {
+        grid-column: span 2;
+      }
+
+      .best-cleaning-card .best-title {
+        font-size: 27px;
+        color: #16a34a;
+        margin: 8px 20px 12px;
+      }
+
+      .best-cleaning-card .best-description {
+        margin: 0 22px 20px;
+        font-size: 15.5px;
+        line-height: 2;
+      }
+
+      .best-description p {
+        margin: 0 0 12px;
+      }
+
+      .best-description strong {
+        color: #16a34a;
+        font-weight: 900;
+      }
+
+      .best-points {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 9px;
+        padding: 0 18px 20px;
+      }
+
+      .best-point {
+        padding: 12px 8px;
+        text-align: center;
+        border-radius: 10px;
+        background: #f2faf4;
+        border: 1px solid #e1f0e5;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.7;
+      }
+
+      .best-point i {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #16a34a;
+      }
+
+      /* =========================
+         قسم العدادات Counter
+      ========================== */
+      .counter-section {
+        padding: 100px 8%;
+        background: #16a34a;
+      }
+
+      .counter-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 35px;
+      }
+
+      .counter-box {
+        background: white;
+        padding: 40px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        transition: 0.4s;
+      }
+
+      .counter-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .counter-box i {
+        font-size: 55px;
+        color: #16a34a;
+        margin-bottom: 20px;
+      }
+
+      .counter-box h2 {
+        font-size: 55px;
+        color: #111;
+      }
+
+      .counter-box p {
+        margin-top: 15px;
+        font-size: 22px;
+        color: #666;
+      }
+
+      /* =========================
+         قسم التقييمات Reviews
+      ========================== */
+      .reviews-section {
+        padding: 120px 8%;
+        background: #fff;
+        text-align: center;
+      }
+
+      .reviews-section h2 {
+        font-size: 45px;
+        color: #16a34a;
+      }
+
+      .reviews-section > p {
+        font-size: 20px;
+        margin: 15px 0 60px;
+        color: #666;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+      }
+
+      .review-card {
+        background: #fff;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        transition: 0.4s;
+      }
+
+      .review-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .review-card img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+      }
+
+      .review-card h3 {
+        font-size: 28px;
+      }
+
+      .review-card p {
+        margin-top: 20px;
+        line-height: 2;
+        font-size: 18px;
+        color: #666;
+      }
+
+      .stars {
+        color: #ffd700;
+        font-size: 26px;
+        margin-top: 10px;
+      }
+
+      /* =========================
+         قسم الحجز Booking
+      ========================== */
+      .booking {
+        padding: 120px 8%;
+        background: #eef8f3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .booking-right img {
+        width: 100%;
+        border-radius: 25px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+      }
+
+      .booking h2 {
+        font-size: 45px;
+        color: #16a34a;
+        margin-bottom: 20px;
+      }
+
+      .booking p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: #555;
+      }
+
+      .booking form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .booking input,
+      .booking textarea,
+      .booking select {
+        padding: 18px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+      }
+
+      .booking textarea {
+        height: 170px;
+        resize: none;
+      }
+
+      .booking button {
+        background: #16a34a;
+        color: white;
+        border: none;
+        padding: 18px;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      .booking button:hover {
+        background: #11813a;
+      }
+
+      /* =========================
+         قسم الأسئلة الشائعة FAQ
+      ========================== */
+      .faq-section {
+        padding: 100px 8%;
+        background: #fff;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 45px;
+        color: #16a34a;
+        margin-bottom: 15px;
+      }
+
+      .section-title p {
+        font-size: 20px;
+        color: #666;
+      }
+
+      .faq-container {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .faq-container details {
+        margin-bottom: 20px;
+        background: #f8f8f8;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .faq-container summary {
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .faq-container p {
+        margin-top: 20px;
+        line-height: 2;
+        font-size: 18px;
+        color: #555;
+      }
+
+      /* =========================
+         الفوتر والأزرار العائمة Footer
+      ========================== */
+      .footer {
+        background: #111;
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .footer img {
+        width: 120px;
+        margin: 0 auto 25px;
+      }
+
+      .footer h2 {
+        font-size: 38px;
+        margin-bottom: 15px;
+      }
+
+      .footer p {
+        font-size: 19px;
+        line-height: 2;
+        color: #ddd;
+      }
+
+      .footer-contact {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 35px 0;
+        flex-wrap: wrap;
+      }
+
+      .footer-contact a {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+      }
+
+      .footer-contact i {
+        margin-left: 10px;
+        color: #16a34a;
+      }
+
+      .social {
+        margin: 35px 0;
+      }
+
+      .social a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 55px;
+        height: 55px;
+        background: #16a34a;
+        border-radius: 50%;
+        margin: 0 8px;
+        color: white;
+        font-size: 24px;
+        transition: 0.3s;
+      }
+
+      .social a:hover {
+        transform: translateY(-8px);
+        background: #0f7d39;
+      }
+
+      .copyright {
+        margin-top: 40px;
+        font-size: 17px;
+        color: #999;
+      }
+
+      .floating-call,
+      .floating-whatsapp {
+        position: fixed;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        color: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        transition: 0.35s;
+        z-index: 99999;
+      }
+
+      .floating-call {
+        width: 70px;
+        height: 70px;
+        bottom: 120px;
+        background: #000;
+        font-size: 28px;
+      }
+
+      .floating-whatsapp {
+        width: 80px;
+        height: 80px;
+        bottom: 25px;
+        background: #25d366;
+        font-size: 46px;
+      }
+
+      .floating-call:hover,
+      .floating-whatsapp:hover {
+        transform: scale(1.12);
+      }
+
+      #topBtn {
+        position: fixed;
+        left: 25px;
+        bottom: 25px;
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        background: #16a34a;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        display: none;
+        z-index: 99999;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+      }
+
+      #topBtn:hover {
+        transform: scale(1.1);
+      }
+
+      section {
+        animation: fadeUp 0.8s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================
+         التجاوب مع الشاشات Responsive
+      ========================== */
+      @media (max-width: 1100px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 21px;
+        }
+
+        .best-cleaning-card {
+          grid-column: span 2;
+        }
+
+        .gallery-section > h2 { font-size: 35px; }
+        .gallery-intro { font-size: 18px; }
+        .gallery-card h3 { font-size: 21px; }
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          padding: 15px;
+        }
+
+        nav ul {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        .hero h2 {
+          font-size: 24px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+          bottom: -120px;
+        }
+
+        .container,
+        .booking {
+          grid-template-columns: 1fr;
+        }
+
+        .about-features {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .gallery-section {
+          margin: 40px auto;
+          padding: 25px 15px;
+        }
+
+        .gallery-section > h2 { font-size: 32px; }
+        .gallery-intro { font-size: 17px; line-height: 1.9; margin-bottom: 30px; }
+        .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+        .best-cleaning-card { grid-column: span 2; }
+        .gallery-card h3 { font-size: 20px; margin: 7px 14px 9px; }
+        .gallery-card p { font-size: 15px; margin: 0 14px 19px; line-height: 1.9; }
+        .gallery-buttons { padding: 12px 12px 7px; gap: 7px; }
+        .gallery-buttons a { min-height: 47px; font-size: 14px; }
+        .best-cleaning-card .best-title { font-size: 25px; }
+        .best-cleaning-card .best-description { font-size: 15px; margin-left: 17px; margin-right: 17px; }
+      }
+
+      @media (max-width: 768px) {
+        nav { flex-direction: column; padding: 10px; }
+        nav ul { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        header { height: auto; min-height: 100vh; padding: 110px 0 40px; }
+        .hero { position: relative; top: auto; left: auto; transform: none; width: 95%; padding-top: 20px; }
+        .hero img { width: 90px; }
+        .hero h1 { font-size: 34px; }
+        .hero h2 { font-size: 20px; }
+        .hero p { font-size: 16px; }
+        .hero-buttons { flex-direction: column; }
+        .hero-buttons a { width: 100%; justify-content: center; }
+        .stats { position: relative; left: auto; bottom: auto; transform: none; width: 95%; margin: 30px auto; grid-template-columns: 1fr 1fr; }
+        .container, .booking { display: flex; flex-direction: column; }
+        .gallery-grid, .reviews-grid { grid-template-columns: 1fr; }
+        .gallery-card img, .booking-right img, .about-image img { height: auto; }
+        .section-title h2, .about-text h2, .gallery-section h2, .reviews-section h2, .booking h2 { font-size: 30px; }
+
+        .floating-call {
+          width: 60px;
+          height: 60px;
+          bottom: 95px;
+          right: 15px;
+          font-size: 24px;
+        }
+
+        .floating-whatsapp {
+          width: 70px;
+          height: 70px;
+          bottom: 15px;
+          right: 15px;
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .gallery-section { width: 100%; margin: 30px auto; padding: 20px 10px; }
+        .gallery-section > h2 { font-size: 28px; line-height: 1.6; }
+        .gallery-intro { font-size: 15.5px; line-height: 1.9; margin-bottom: 24px; }
+        .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
+        .best-cleaning-card { grid-column: auto; }
+        .gallery-card { border-radius: 16px; }
+        .gallery-card img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+        .gallery-buttons { padding: 11px 11px 7px; gap: 7px; }
+        .gallery-buttons a { min-height: 50px; font-size: 14px; border-radius: 10px; }
+        .gallery-buttons i { font-size: 18px; }
+        .gallery-card h3 { font-size: 21px; line-height: 1.65; margin: 6px 13px 9px; }
+        .gallery-card p { font-size: 15px; line-height: 1.95; margin: 0 14px 20px; }
+        .best-cleaning-card .best-title { font-size: 23px; line-height: 1.7; margin: 7px 12px 10px; }
+        .best-cleaning-card .best-description { margin: 0 14px 18px; font-size: 14.8px; line-height: 1.95; }
+        .best-points { grid-template-columns: 1fr; gap: 8px; padding: 0 14px 18px; }
+        .best-point { font-size: 14px; }
+      }
+
+      @media (max-width: 380px) {
+        .gallery-section > h2 { font-size: 25px; }
+        .gallery-intro { font-size: 14.5px; }
+        .gallery-card h3 { font-size: 19px; }
+        .gallery-card p { font-size: 14px; }
+        .gallery-buttons a { font-size: 13px; }
+        .best-cleaning-card .best-title { font-size: 21px; }
+        .best-cleaning-card .best-description { font-size: 14px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- القائمة العلوية -->
+    <nav>
+      <div class="logo">
+        <img src="https://i.ibb.co/r2HtxJFM/ef3684cb-9158-48bb-900a-f7a03992c1d3.png" alt="شعار سفيان كلين" />
+        <span>Sufian Clean</span>
+      </div>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="#gallery">المعرض</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+    </nav>
+
+    <!-- الترويسة الرئيسية -->
+    <header>
+      <div class="hero">
+        <img src="https://i.ibb.co/r2HtxJFM/ef3684cb-9158-48bb-900a-f7a03992c1d3.png" alt="شعار الشركة" />
+        <h1>شركة سفيان كلين</h1>
+        <h2>تنظيف المنازل • الشركات • الفلل • القصور</h2>
+        <p>
+          نقدم خدمات تنظيف احترافية باستخدام أحدث المعدات مع فريق متخصص وأسعار تنافسية وجودة مضمونة 100%.
+        </p>
+        <div class="hero-buttons">
+          <!-- زر الاتصال -->
+          <a href="tel:01278213966"
+             class="call-btn"
+             onclick="gtag('event','conversion',{'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'});">
+            <i class="fas fa-phone"></i>
+            اتصل الآن
+          </a>
+
+          <!-- زر واتساب -->
+          <a href="https://wa.me/201278213966"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="whatsapp-btn"
+             onclick="gtag('event','conversion',{'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'});">
+            <i class="fab fa-whatsapp"></i>
+            واتساب
+          </a>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h2>15+</h2>
+          <p>سنوات خبرة</p>
+        </div>
+        <div class="stat">
+          <h2>5000+</h2>
+          <p>عميل سعيد</p>
+        </div>
+        <div class="stat">
+          <h2>3500+</h2>
+          <p>منزل تم تنظيفه</p>
+        </div>
+        <div class="stat">
+          <h2>100%</h2>
+          <p>ضمان الجودة</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- قسم من نحن -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-text">
+          <h2>من نحن</h2>
+          <p>
+            شركة <strong>سفيان كلين</strong> متخصصة في تنظيف المنازل والشركات والفلل والقصور وجلي وتلميع الرخام والتنظيف بعد التشطيب. نستخدم أحدث المعدات ومواد تنظيف آمنة مع فريق محترف لضمان أفضل النتائج في كل زيارة.
+          </p>
+          <div class="about-features">
+            <div><i class="fas fa-check-circle"></i> أكثر من 15 سنة خبرة</div>
+            <div><i class="fas fa-check-circle"></i> معدات تنظيف حديثة</div>
+            <div><i class="fas fa-check-circle"></i> أسعار مناسبة</div>
+            <div><i class="fas fa-check-circle"></i> خدمة 24 ساعة</div>
+            <div><i class="fas fa-check-circle"></i> ضمان الجودة</div>
+            <div><i class="fas fa-check-circle"></i> فريق محترف ومدرب</div>
+          </div>
+        </div>
+        <div class="about-image">
+          <a href="https://ibb.co/3mv8mDQv" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/Jjqbjfgq/social-media-post-with-phone.png" alt="شركة سفيان لخدمات التنظيف" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم معرض الأعمال -->
+    <section id="gallery" class="gallery-section">
+      <h2>معرض أعمال شركة سفيان كلين</h2>
+      <p class="gallery-intro">
+        شاهد نماذج من خدمات شركة سفيان كلين في تنظيف المنازل والشقق والشركات والفلل والقصور والتنظيف العميق وبعد التشطيب وجلي وتلميع الرخام.
+      </p>
+
+      <div class="gallery-grid">
+        <!-- 1 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/PzNLXPDT/scene-1-before-after-1.png" alt="تنظيف المنازل قبل وبعد - شركة سفيان كلين" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف المنازل</h3>
+          <p>تنظيف شامل للمنازل مع إزالة الأتربة والبقع وتنظيف الأرضيات والأسطح والغرف والمطابخ والحمامات للحصول على منزل نظيف ومرتب.</p>
+        </article>
+
+        <!-- 2 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/ZRdYDz3G/scene-2-team-logo.png" alt="فريق شركة سفيان كلين لخدمات التنظيف" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>فريق العمل</h3>
+          <p>فريق متخصص ومدرب على تنفيذ مختلف أعمال التنظيف باستخدام المعدات الحديثة وأساليب العمل المنظمة للوصول إلى أفضل النتائج.</p>
+        </article>
+
+        <!-- 3 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/qMq2YFDt/marble-polishing-1.png" alt="جلي وتلميع الرخام - شركة سفيان كلين" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>جلي وتلميع الرخام</h3>
+          <p>جلي وتلميع الرخام لإزالة الخدوش والبقع وآثار الاستخدام وإعادة اللمعان والمظهر الجمالي للأرضيات والأسطح الرخامية.</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/yBkQRCXm/post-construction-2.png" alt="تنظيف بعد التشطيب وإزالة مخلفات البناء" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف بعد التشطيب</h3>
+          <p>إزالة بقايا الأسمنت والدهانات وغبار التشطيب وتجهيز المكان ليصبح نظيفًا وجاهزًا للسكن أو الاستخدام مباشرة.</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/hJd3LgfM/post-construction-1-1.png" alt="تنظيف شامل للمنازل والشقق" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف شامل</h3>
+          <p>تنظيف احترافي وشامل للمنازل والشقق مع الاهتمام بالتفاصيل وإزالة الأتربة وبقايا الأعمال وتجهيز المكان للاستخدام.</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/KxqdD5zH/sufyan-apartment-before-after-1-1-1.png" alt="تنظيف عميق للمنازل والشقق قبل وبعد" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف عميق للمنازل والشقق</h3>
+          <p>تنظيف عميق يصل إلى الزوايا والأماكن المخفية وتحت الأثاث، مع تنظيف الأرضيات والأسطح والمطابخ والحمامات وإزالة الأوساخ المتراكمة.</p>
+        </article>
+
+        <!-- 7 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/0ykTDyNT/kitchen-cleaning-1.png" alt="تنظيف المطابخ وإزالة الدهون" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف المطابخ</h3>
+          <p>إزالة الدهون والأوساخ المتراكمة وتنظيف الأسطح والخزائن والأرضيات والمناطق المحيطة بالأجهزة للحصول على مطبخ نظيف ومنظم.</p>
+        </article>
+
+        <!-- 8 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/zh6ZSKZ2/carpet-cleaning-1.png" alt="غسيل وتنظيف السجاد والموكيت" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>غسيل السجاد والموكيت</h3>
+          <p>تنظيف السجاد والموكيت وإزالة الأتربة والبقع والروائح مع العناية بالخامة والحفاظ على مظهرها ونظافتها.</p>
+        </article>
+
+        <!-- 9 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/0p9xJ2KV/sofa-cleaning-2.png" alt="تنظيف الكنب والانتريهات" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف الكنب والانتريهات</h3>
+          <p>تنظيف الكنب والانتريهات وإزالة البقع والأتربة والروائح مع الاهتمام بنوع القماش وطريقة التنظيف المناسبة.</p>
+        </article>
+
+        <!-- 10 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/nM7D3bPp/wall-cleaning-1.png" alt="تنظيف الحوائط والجدران والأسقف" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف الحوائط والجدران</h3>
+          <p>تنظيف الجدران والأسقف وإزالة الأتربة والعلامات والأوساخ المتراكمة مع التعامل بعناية مع الدهانات والأسطح المختلفة.</p>
+        </article>
+
+        <!-- 11 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/gLskFsJB/post-construction-4.png" alt="تنظيف الفلل والمنازل الكبيرة" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف الفلل</h3>
+          <p>تنظيف شامل للفلل والمنازل الكبيرة يشمل الغرف والمطابخ والحمامات والأرضيات والزجاج والأسطح مع الاهتمام بأدق التفاصيل.</p>
+        </article>
+
+        <!-- 12 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/nM7Csvvs/sufian-clean-luxury.png" alt="تنظيف القصور والفلل الفاخرة" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>تنظيف القصور</h3>
+          <p>خدمات تنظيف متخصصة للقصور والفلل الفاخرة مع الاهتمام بالمساحات الكبيرة والأسطح المختلفة والتفاصيل الدقيقة.</p>
+        </article>
+
+        <!-- 13 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/XfDGnPCF/sufian-clean-tech.png" alt="تعقيم وتنظيف الأسطح للمنازل والشركات" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>التعقيم الكامل</h3>
+          <p>تنظيف وتعقيم الأسطح والمناطق المختلفة في المنزل أو المكتب مع الاهتمام بنقاط التلامس والمناطق الأكثر استخدامًا.</p>
+        </article>
+
+        <!-- 14 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/HTXyMmk2/scene-6-happy-customers.png" alt="عملاء شركة سفيان كلين لخدمات التنظيف" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>عملاء سعداء</h3>
+          <p>نسعى دائمًا إلى تقديم خدمة تنظيف احترافية تلبي احتياجات العملاء وتمنحهم تجربة مريحة ونتائج مرضية في كل خدمة.</p>
+        </article>
+
+        <!-- 15 -->
+        <article class="gallery-card">
+          <img src="https://i.ibb.co/39qvnxvz/scene-final-contact.png" alt="احجز خدمة تنظيف من شركة سفيان كلين" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3>احجز خدمة التنظيف الآن</h3>
+          <p>تواصل مع شركة سفيان كلين لحجز خدمات تنظيف المنازل والشقق والفلل والقصور والشركات والتنظيف العميق وبعد التشطيب.</p>
+        </article>
+
+        <!-- 16: أفضل شركة تنظيف منازل في القاهرة -->
+        <article class="gallery-card best-cleaning-card">
+          <img src="https://i.ibb.co/nMnBZkRb/sufyan-best-cleaning-cairo-1-1-2-1-1.png" alt="أفضل شركة تنظيف منازل في القاهرة - شركة سفيان كلين" loading="lazy" decoding="async" />
+          <div class="gallery-buttons">
+            <a href="https://wa.me/201278213966" class="gallery-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="التواصل مع شركة سفيان كلين عبر واتساب">
+              <i class="fa-brands fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:+201278213966" class="gallery-call" aria-label="الاتصال بشركة سفيان كلين">
+              <i class="fa-solid fa-phone"></i> اتصل الآن
+            </a>
+          </div>
+          <h3 class="best-title">أفضل شركة تنظيف منازل في القاهرة</h3>
+          <div class="best-description">
+            <p>
+              إذا كنت تبحث عن <strong>أفضل شركة تنظيف منازل في القاهرة</strong>، فإن شركة سفيان كلين تقدم خدمات تنظيف متخصصة للمنازل والشقق والفلل والقصور، مع الاهتمام بالتفاصيل وتنظيم خطوات العمل بما يتناسب مع احتياجات كل مكان.
+            </p>
+            <p>
+              نقدم التنظيف العادي والتنظيف العميق والتنظيف بعد التشطيب، إلى جانب تنظيف المطابخ والحمامات والأرضيات والأسطح والزجاج والحوائط، وتنظيف الكنب والانتريهات والسجاد والمفروشات، وجلي وتلميع الرخام حسب طبيعة السطح وحالته.
+            </p>
+            <p>
+              ما يميز <strong>سفيان كلين</strong> هو الاهتمام بالمناطق التي قد لا يشملها التنظيف العادي، مثل الزوايا والأركان وتحت الأثاث وحول الأجهزة والأماكن التي يصعب الوصول إليها، مع التعامل بعناية مع مختلف الأسطح.
+            </p>
+            <p>
+              نستخدم معدات حديثة وأساليب تنظيف منظمة، ونحدد احتياجات المكان قبل بدء الخدمة للتركيز على المناطق التي تحتاج إلى عناية خاصة، سواء كان المطلوب تجهيز شقة جديدة أو تنظيف المنزل بعد الانتقال أو إزالة الأتربة والأوساخ المتراكمة.
+            </p>
+            <p>
+              هدفنا هو تقديم تجربة تنظيف مريحة تساعد على جعل المنزل أكثر نظافة وترتيبًا وانتعاشًا. لذلك إذا كنت تبحث عن شركة تنظيف منازل في القاهرة تهتم بالتنظيم والجودة والتفاصيل، يمكنك التواصل مع سفيان كلين واختيار الخدمة المناسبة لمنزلك.
+            </p>
+          </div>
+          <div class="best-points">
+            <div class="best-point">
+              <i class="fa-solid fa-house"></i>
+              تنظيف المنازل والشقق
+            </div>
+            <div class="best-point">
+              <i class="fa-solid fa-sparkles"></i>
+              تنظيف عميق
+            </div>
+            <div class="best-point">
+              <i class="fa-solid fa-broom"></i>
+              تنظيف بعد التشطيب
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- قسم العدادات -->
+    <section class="counter-section">
+      <div class="counter-container">
+        <div class="counter-box">
+          <i class="fas fa-users"></i>
+          <h2 class="count" data-count="5000">0</h2>
+          <p>عميل سعيد</p>
+        </div>
+        <div class="counter-box">
+          <i class="fas fa-house"></i>
+          <h2 class="count" data-count="3500">0</h2>
+          <p>منزل تم تنظيفه</p>
+        </div>
+        <div class="counter-box">
+          <i class="fas fa-building"></i>
+          <h2 class="count" data-count="1200">0</h2>
+          <p>شركة ومكتب</p>
+        </div>
+        <div class="counter-box">
+          <i class="fas fa-award"></i>
+          <h2 class="count" data-count="15">0</h2>
+          <p>سنوات خبرة</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم التقييمات -->
+    <section class="reviews-section">
+      <h2>ماذا قال عملاؤنا؟</h2>
+      <p>نفخر بثقة آلاف العملاء في جميع أنحاء مصر.</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <img src="https://i.ibb.co/HTXyMmk2/scene-6-happy-customers.png" alt="عميل 1" />
+          <h3>أحمد محمد</h3>
+          <div class="stars">★★★★★</div>
+          <p>خدمة ممتازة جداً.. وصل الفريق في الموعد وأصبح المنزل كالجديد.</p>
+        </div>
+        <div class="review-card">
+          <img src="https://i.ibb.co/HTXyMmk2/scene-6-happy-customers.png" alt="عميل 2" />
+          <h3>منى علي</h3>
+          <div class="stars">★★★★★</div>
+          <p>أفضل شركة تنظيف تعاملت معها، اهتمام بالتفاصيل وسرعة في الإنجاز.</p>
+        </div>
+        <div class="review-card">
+          <img src="https://i.ibb.co/HTXyMmk2/scene-6-happy-customers.png" alt="عميل 3" />
+          <h3>شركة المستقبل</h3>
+          <div class="stars">★★★★★</div>
+          <p>نتعامل معهم بشكل دائم لتنظيف المكاتب، خدمة احترافية جداً.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الحجز والاتصال -->
+    <section id="contact" class="booking">
+      <div class="booking-left">
+        <h2>احجز خدمة التنظيف الآن</h2>
+        <p>املأ البيانات وسيتم تحويلك مباشرة إلى واتساب مع إرسال تفاصيل الحجز.</p>
+        <form id="bookingForm">
+          <input id="name" type="text" placeholder="الاسم بالكامل" required />
+          <input id="phone" type="tel" placeholder="رقم الهاتف" required />
+          <input id="city" type="text" placeholder="المدينة" required />
+          <select id="service">
+            <option>تنظيف منزل</option>
+            <option>تنظيف شركة</option>
+            <option>تنظيف فيلا</option>
+            <option>جلي رخام</option>
+            <option>تنظيف بعد التشطيب</option>
+            <option>تعقيم</option>
+          </select>
+          <textarea id="details" placeholder="تفاصيل الخدمة"></textarea>
+          <button type="submit">إرسال عبر واتساب</button>
+        </form>
+      </div>
+      <div class="booking-right">
+        <img src="https://i.ibb.co/39qvnxvz/scene-final-contact.png" alt="احجز الآن" />
+      </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section id="faq" class="faq-section">
+      <div class="section-title">
+        <h2>الأسئلة الشائعة</h2>
+        <p>إجابات على أكثر الأسئلة التي يطرحها عملاؤنا.</p>
+      </div>
+      <div class="faq-container">
+        <details open>
+          <summary>هل تعملون جميع أيام الأسبوع؟</summary>
+          <p>نعم، نعمل طوال الأسبوع بما في ذلك العطلات، وخدمة العملاء متاحة 24 ساعة.</p>
+        </details>
+        <details>
+          <summary>هل تستخدمون مواد تنظيف آمنة؟</summary>
+          <p>نستخدم مواد تنظيف وتعقيم عالية الجودة وآمنة على الأطفال والحيوانات الأليفة.</p>
+        </details>
+        <details>
+          <summary>هل يوجد ضمان على الخدمة؟</summary>
+          <p>نعم، جميع خدماتنا تشمل ضمان الجودة ورضا العميل.</p>
+        </details>
+        <details>
+          <summary>هل يمكن الحجز عبر واتساب؟</summary>
+          <p>بالتأكيد، يمكنك الحجز مباشرة من زر واتساب الموجود بالموقع.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="https://i.ibb.co/r2HtxJFM/ef3684cb-9158-48bb-900a-f7a03992c1d3.png" alt="شعار سفيان كلين" />
+        <h2>شركة سفيان كلين</h2>
+        <p>
+          تنظيف المنازل • الشركات • الفلل • القصور • جلي الرخام • التنظيف بعد التشطيب
+        </p>
+
+        <div class="footer-contact">
+          <!-- الاتصال -->
+          <a href="tel:01278213966" onclick="gtag('event','conversion',{'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'});">
+            <i class="fas fa-phone"></i>
+            01278213966
+          </a>
+
+          <!-- واتساب -->
+          <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" onclick="gtag('event','conversion',{'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'});">
+            <i class="fab fa-whatsapp"></i>
+            واتساب
+          </a>
+        </div>
+
+        <div class="social">
+          <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <p class="copyright">
+          © 2026 جميع الحقوق محفوظة | شركة سفيان كلين
+        </p>
+      </div>
+    </footer>
+
+    <!-- زر الصعود للأعلى -->
+    <button id="topBtn" aria-label="العودة للأعلى">
+      <i class="fas fa-angle-up"></i>
+    </button>
+
+    <!-- زر الاتصال العائم -->
+    <a href="tel:01278213966" class="floating-call" title="اتصل بنا" aria-label="اتصل بنا" onclick="gtag('event','conversion',{'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'});">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <!-- زر واتساب العائم -->
+    <a href="https://wa.me/201278213966" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="واتساب" aria-label="تواصل عبر واتساب" onclick="gtag('event','conversion',{'send_to':'AW-18304102636/CfLMCLjDgs0cEOzhiZhE'});">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- السكريبت البرمجي -->
+    <script>
+      // معالجة نموذج الحجز وإرساله على الواتساب
+      document.getElementById('bookingForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        let name = document.getElementById('name').value;
+        let phone = document.getElementById('phone').value;
+        let city = document.getElementById('city').value;
+        let service = document.getElementById('service').value;
+        let details = document.getElementById('details').value;
+
+        let msg = '*طلب حجز جديد*\n';
+        msg += 'الاسم: ' + name + '\n';
+        msg += 'الهاتف: ' + phone + '\n';
+        msg += 'المدينة: ' + city + '\n';
+        msg += 'الخدمة: ' + service + '\n';
+        msg += 'التفاصيل: ' + details;
+
+        window.open('https://wa.me/201278213966?text=' + encodeURIComponent(msg), '_blank');
+      });
+
+      // أنيميشن الأرقام والتأثير العددي
+      document.querySelectorAll('.count').forEach((counter) => {
+        let target = +counter.dataset.count;
+        let c = 0;
+        let speed = target / 120;
+        let update = () => {
+          c += speed;
+          if (c < target) {
+            counter.innerText = Math.floor(c);
+            requestAnimationFrame(update);
+          } else {
+            counter.innerText = target + '+';
+          }
+        };
+        update();
+      });
+
+      // إظهار وإخفاء زر العودة للأعلى
+      const topBtn = document.getElementById('topBtn');
+      window.onscroll = function () {
+        if (window.scrollY > 500) {
+          topBtn.style.display = 'block';
+        } else {
+          topBtn.style.display = 'none';
+        }
+      };
+
+      topBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // التحميل الكسول للصور
+      document.querySelectorAll('img').forEach((img) => {
+        img.loading = 'lazy';
+      });
+    </script>
+  </body>
+</html>
